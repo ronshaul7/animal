@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="project.css" />
+    <title>Animal</title>
+    <script src="./main.js"></script>
+  </head>
+  <a href="zoo.html">Go Back to Zoo</a>
+  <a href="dashboard.html" style="margin-left: 1400px">Go to dash</a>
+  <body>
+    <nav id="visitor-info"></nav>
+    <button id="reset-button">Reset</button>
+    <select id="visitor-select">
+      <!-- Options will be added dynamically using JavaScript -->
+    </select>
+    <div id="feed-dialog" style="display: none">
+      <p>Thank you for feeding the animal!</p>
+      <button id="close-dialog">Close</button>
+    </div>
+    <div id="selectedAnimal">
+      <div id="image">
+        <!-- show here the animal image -->
+      </div>
+      <div>
+        <h1 id="name"></h1>
+        <p id="weight"></p>
+        <p id="height"></p>
+        <p id="color"></p>
+        <p id="habitat"></p>
+        <p id="isPredator"></p>
+        <button id="feed-animal">Feed me</button>
+      </div>
+    </div>
+    <div id="related-animals"></div>
+
+    <script src="./animal.js"></script>
+  </body>
+</html>

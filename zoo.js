@@ -55,6 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
           visitAnimal(animal.name);
         });
 
+        // Create and add the image element
+        const imageElement = document.createElement("img");
+        imageElement.src = animal.Image; // Assuming 'Image' is the correct property name
+
         const nameElement = document.createElement("h2");
         nameElement.textContent = animal.name;
 
@@ -82,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
         card.appendChild(heightElement);
         card.appendChild(colorElement);
         card.appendChild(habitatElement);
+        card.appendChild(imageElement);
+
 
         // Append the card to the container
         animalListContainer.appendChild(card);
@@ -232,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
         animal.isPredator ? "True" : "False"
       }`;
 
-      // Create image element
+      // הוספת תמונה לאלמנט
       const imageElement = document.createElement("img");
       imageElement.src = animal.Image;
 
@@ -247,14 +253,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const habitatElement = document.createElement("p");
       habitatElement.textContent = `Habitat: ${animal.habitat}`;
+      card.appendChild(imageElement);
       card.appendChild(nameElement);
       card.appendChild(predatorElement);
       card.appendChild(weightElement);
       card.appendChild(heightElement);
       card.appendChild(colorElement);
       card.appendChild(habitatElement);
-      // Append image element to the card
-      card.appendChild(imageElement);
 
       // Append the card to the container
       animalListContainer.appendChild(card);

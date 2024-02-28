@@ -1,3 +1,4 @@
+
 #selectedAnimal {
   justify-content: center;
   align-items: center;
@@ -13,11 +14,7 @@
   display: flex; /* Use flexbox layout */
   flex-wrap: wrap; /* Allow items to wrap to the next row */
 }
-#related-animals {
-  display: flex; /* Use flexbox layout */
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 .animal-card {
   border: 5px solid #ccc; /* Add border around each card */
   margin: 10px; /* Add margin between each card */
@@ -78,20 +75,16 @@ img {
   background-color: #0056b3;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
 #create-visitor-form {
+  background-color: white;
   width: 300px; /* רוחב הפורם */
   margin: 0 auto; /* מרכז את הפורם באופן אופקי */
   padding: 20px; /* ריווח פנימי */
   border: 1px solid #ccc; /* מסגרת */
   border-radius: 5px; /* פינות מעוגלות של המסגרת */
+  margin-top: 200px; /* ריווח מלמעלה */
 }
+
 
 body {
   font-family: Arial, sans-serif;
@@ -129,6 +122,7 @@ body {
 
 
 #visitor-cards {
+  background-color: white;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -136,7 +130,6 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .visitor-card {
   width: calc(33.33% - 20px);
   background-color: #fff;
@@ -154,7 +147,6 @@ body {
   background-color: #985b5b; /* צבע רקע חדש כאשר מרחף */
   color: #333; /* צבע טקסט חדש כאשר מרחף */
 }
-
 
 .visitor-card img {
   width: 100%;
@@ -239,8 +231,12 @@ body {
   text-align: center;
 }
 #filter-options {
+  background-color: white;
   margin: 0 auto;
-  width: 50%; /* או כל רוחב אחר שתרצה */
+  width: 50%;
+  border: 2px solid #ccc; /* Add border around the div */
+  padding: 20px; /* Add padding inside the div */
+  border-radius: 5px; /* Add border radius for rounded corners */
 }
 
 #filter-options h2 {
@@ -286,20 +282,21 @@ body {
   margin-top: 20px; /* Adjust margin-top as needed */
   margin-bottom: 20px; /* Add margin-bottom to separate from other content */
 }
+#animal-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+}
 
+#animal-cards:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+body {
+  background-color: #a86d6d;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
 

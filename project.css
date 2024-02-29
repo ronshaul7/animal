@@ -1,5 +1,5 @@
 body {
-  background-image: url(./images/15.webp);
+  background-image: url(./images/14.webp);
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -9,7 +9,7 @@ body {
 #selectedAnimal {
   justify-content: center;
   align-items: center;
-  border: 5px solid #ccc; /* Add border around each card */
+  border: 5px solid #473f3f; /* Add border around each card */
   margin-bottom: 200px;
   margin-left: 500px;
   padding: 5px; /* Add padding inside each card */
@@ -18,7 +18,7 @@ body {
 }
 
 .animal-card {
-  border: 5px solid #ccc; /* Add border around each card */
+  border: 5px solid #4b3c3c; /* Add border around each card */
   margin: 10px; /* Add margin between each card */
   padding: 5px; /* Add padding inside each card */
   border-radius: 5px; /* Add border radius for rounded corners */

@@ -7,9 +7,10 @@ body {
 }
 
 #selectedAnimal {
+  background-color: #f4f4f4;
   justify-content: center;
   align-items: center;
-  border: 5px solid #473f3f; /* Add border around each card */
+  border: 5px solid #534a4a; /* Add border around each card */
   margin-bottom: 200px;
   margin-left: 500px;
   padding: 5px; /* Add padding inside each card */
@@ -42,6 +43,7 @@ img {
   height: 70px;
 }
 .animal {
+  background-color: #f4f4f4;
   border: 5px solid #363030; /* Add border around each card */
   margin: 50px; /* Add margin between each card */
   padding: 20px; /* Add padding inside each card */

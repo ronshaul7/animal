@@ -1,3 +1,10 @@
+body {
+  background-image: url(./images/15.webp);
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
 
 #selectedAnimal {
   justify-content: center;
@@ -10,11 +17,6 @@
   width: 200px; /* Set a fixed width for each card */
 }
 
-#visitor-cards {
-  display: flex; /* Use flexbox layout */
-  flex-wrap: wrap; /* Allow items to wrap to the next row */
-}
-
 .animal-card {
   border: 5px solid #ccc; /* Add border around each card */
   margin: 10px; /* Add margin between each card */
@@ -24,29 +26,31 @@
   margin: 10px; /* Add some margin between cards */
 }
 .card {
-  border: 5px solid #ccc; /* Add border around each card */
+  background-color: #fff;
+  border: 5px solid #726c6c; /* Add border around each card */
   margin: 10px; /* Add margin between each card */
   padding: 5px; /* Add padding inside each card */
   border-radius: 5px; /* Add border radius for rounded corners */
   width: 200px; /* Set a fixed width for each card */
   margin: 10px; /* Add some margin between cards */
 }
+.card:hover {
+  background-color: #85a0be;
+}
 img {
   width: 70px;
   height: 70px;
 }
-#animal-cards {
-  display: flex; /* Use flexbox layout */
-  flex-wrap: wrap; /* Allow items to wrap to the next row */
-  justify-content: center;
-  margin-top: 200px;
-}
 .animal {
-  border: 5px solid #ccc; /* Add border around each card */
+  border: 5px solid #363030; /* Add border around each card */
   margin: 50px; /* Add margin between each card */
   padding: 20px; /* Add padding inside each card */
   border-radius: 5px; /* Add border radius for rounded corners */
 }
+.animal:hover {
+  background-color: #55718e;
+}
+
 #feed-dialog {
   display: none;
   position: fixed;
@@ -85,14 +89,6 @@ img {
   margin-top: 200px; /* ריווח מלמעלה */
 }
 
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -120,9 +116,8 @@ body {
   border-radius: 5px;
 }
 
-
 #visitor-cards {
-  background-color: white;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -282,21 +277,6 @@ body {
   margin-top: 20px; /* Adjust margin-top as needed */
   margin-bottom: 20px; /* Add margin-bottom to separate from other content */
 }
-#animal-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px; /* Optional: Add border radius for rounded corners */
-}
 
-#animal-cards:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
 
-body {
-  background-color: #a86d6d;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
 

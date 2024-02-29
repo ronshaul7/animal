@@ -50,7 +50,7 @@ function createNewVisitor(event) {
       alert(`Welcome, ${name}! You have been registered as a visitor.`);
     };
 
-    window.location.href = "/login.html";
+    window.location.href="login.html";
     makeVisitor(fullName);
   }
 }

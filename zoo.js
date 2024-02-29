@@ -55,10 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
           visitAnimal(animal.name);
         });
 
-        // Create and add the image element
-        const imageElement = document.createElement("img");
-        imageElement.src = animal.Image; // Assuming 'Image' is the correct property name
-
         const nameElement = document.createElement("h2");
         nameElement.textContent = animal.name;
 
@@ -79,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const habitatElement = document.createElement("p");
         habitatElement.textContent = `Habitat: ${animal.habitat}`;
 
+        // Create and add the image element
+        const imageElement = document.createElement("img");
+        imageElement.src = animal.Image; // Assuming 'Image' is the correct property name
+
         // Append elements to the card
         card.appendChild(nameElement);
         card.appendChild(predatorElement);
@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
         card.appendChild(colorElement);
         card.appendChild(habitatElement);
         card.appendChild(imageElement);
-
 
         // Append the card to the container
         animalListContainer.appendChild(card);
@@ -98,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // ממשו את הלוגיקה שמרנדרת את החיות לתוך הדיב עם האיידי animal-cards
   // וודאו שאתם מציגים אך ורק את החיות שעומדות בפילטורים הנוכחיים
   // במידה ואין פילטרים מסומנים, הציגו את כל החיות
-
   function visitAnimal(animalName) {
     // ממשו את הלוגיקה של מעבר לעמוד חיה עבור החיה הספציפית שנבחרה
     // שמרו בלוקל סטורג' את החיה שנבחרה, כך שבעמוד החיה נוכל לשלוף אותה מהסטורג' ולהציגה בהתאם
@@ -238,10 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
         animal.isPredator ? "True" : "False"
       }`;
 
-      // הוספת תמונה לאלמנט
-      const imageElement = document.createElement("img");
-      imageElement.src = animal.Image;
-
       const weightElement = document.createElement("p");
       weightElement.textContent = `Weight: ${animal.weight} kg`;
 
@@ -253,7 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const habitatElement = document.createElement("p");
       habitatElement.textContent = `Habitat: ${animal.habitat}`;
-      card.appendChild(imageElement);
       card.appendChild(nameElement);
       card.appendChild(predatorElement);
       card.appendChild(weightElement);

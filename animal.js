@@ -157,6 +157,7 @@ function renderRelatedAnimals() {
       <p>Color: ${animal.color}</p>
       <p>Habitat: ${animal.habitat}</p>
       <p>Predator: ${animal.isPredator ? "Yes" : "No"}</p>
+      <img src="${animal.Image}">
     `;
 
     // Append the animal card to the "related-animals" div

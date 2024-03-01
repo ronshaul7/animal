@@ -118,12 +118,14 @@ function renderAnimal() {
     document.getElementById("isPredator").textContent = `Predator: ${
       selectedAnimal.isPredator ? "True" : "False"
     }`;
+    document.getElementById("animal-image").src = selectedAnimal.Image;
     renderRelatedAnimals();
   } else {
     // Handle the case when no animal is selected
     console.log("No animal selected.");
   }
 }
+
 function renderRelatedAnimals() {
   // ממשו את הלוגיקה שמרנדרת כרטיסיות של החיות ששדה ההאביטט שלהם זהה לחיה שמוצגת
   // רנדרו אותן לתוך הדיב שמיועד להן עם האיידי related-animals

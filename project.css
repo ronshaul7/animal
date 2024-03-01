@@ -1,5 +1,5 @@
 body {
-  background-image: url(./images/14.webp);
+  background-image: url(./images/theZoo.jpg);
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -7,7 +7,6 @@ body {
 }
 
 #selectedAnimal {
-  background-color: #f4f4f4;
   justify-content: center;
   align-items: center;
   border: 5px solid #534a4a; /* Add border around each card */
@@ -15,10 +14,23 @@ body {
   margin-left: 500px;
   padding: 5px; /* Add padding inside each card */
   border-radius: 5px; /* Add border radius for rounded corners */
-  width: 200px; /* Set a fixed width for each card */
+  width: 450px; /* Set a larger width for each card */
+  height: 450px; /* Set a larger height for each card */
+  font-size: 20px; /* Set a larger font size for the content */
+  backdrop-filter: blur(10px); /* Add a blurred effect to the background */
+  display: flex;
+}
+
+#selectedAnimal img {
+  margin-left: auto; /* Move the image to the right side */
+  margin-right: 20px; /* Add space to the left of the image */
+  width: 200px; /* Set the width of the image */
+  height: auto; /* Let the height adjust proportionally */
+  border-radius: 5px; /* Add border radius for rounded corners */
 }
 
 .animal-card {
+  background-color: #f4f4f4;
   border: 5px solid #4b3c3c; /* Add border around each card */
   margin: 10px; /* Add margin between each card */
   padding: 5px; /* Add padding inside each card */
@@ -39,8 +51,8 @@ body {
   background-color: #85a0be;
 }
 img {
-  width: 70px;
-  height: 70px;
+  width: 110px;
+  height: 110px;
 }
 .animal {
   background-color: #f4f4f4;
@@ -82,13 +94,14 @@ img {
 }
 
 #create-visitor-form {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5); /* שקופיות של 50% */
+  backdrop-filter: blur(10px); /* אפקט מטושטש */
   width: 300px; /* רוחב הפורם */
   margin: 0 auto; /* מרכז את הפורם באופן אופקי */
   padding: 20px; /* ריווח פנימי */
   border: 1px solid #ccc; /* מסגרת */
   border-radius: 5px; /* פינות מעוגלות של המסגרת */
-  margin-top: 200px; /* ריווח מלמעלה */
+  margin-top: 300px; /* ריווח מלמעלה */
 }
 
 .container {
@@ -99,7 +112,7 @@ img {
 
 #visitors-title {
   text-align: center;
-  background-color:grey;
+  background-color:rgb(231, 213, 213);
   padding: 10px 0;
   margin-bottom: 20px;
 }

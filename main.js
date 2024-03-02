@@ -6,8 +6,19 @@
 let onlineVisitors = JSON.parse(localStorage.getItem("onlineVisitors")) || [];
 console.log(onlineVisitors);
 const stockImages = [
-  "images/female avatar.jpg",
   "images/avatar.png",
+  "images/male5.webp",
+  "images/male6.jpg",
+  "images/male7.jpg",
+  "images/man5.jpg",
+  "images/beautiful-woman-avatar.jpg",
+  "images/beautiful-woman-avatar2.jpg",
+  "images/beautiful-woman-avatar3.jpg",
+  "images/beautiful-woman-avatar6.jpg",
+  "images/beautiful-woman4.jpg",
+  "images/beautiful-woman5.jpg",
+  "images/male8.jpg",
+  "images/woman1.jpg",
 
   // Add paths for all your stock images
 ];

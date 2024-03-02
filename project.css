@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 5px solid #534a4a; /* Add border around each card */
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   margin-left: 500px;
   padding: 5px; /* Add padding inside each card */
   border-radius: 5px; /* Add border radius for rounded corners */
@@ -30,6 +30,13 @@ body {
   border-radius: 5px; /* Add border radius for rounded corners */
 }
 
+#related-animals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin-bottom: 20px; /* כדי להוסיף רווח מתחת */
+}
+
 .animal-card {
   background-color: #f4f4f4;
   border: 5px solid #4b3c3c; /* Add border around each card */
@@ -37,8 +44,12 @@ body {
   padding: 5px; /* Add padding inside each card */
   border-radius: 5px; /* Add border radius for rounded corners */
   width: 200px; /* Set a fixed width for each card */
-  margin: 10px; /* Add some margin between cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .card {
   background-color: #fff;
   border: 5px solid #726c6c; /* Add border around each card */
@@ -103,6 +114,10 @@ img {
   margin-top: 200px; /* ריווח מלמעלה */
 }
 
+#create-visitor-form input[type="submit"] {
+  align-self: center; /* מרכוז את הכפתור בתוך ה-DIV */
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -113,9 +128,10 @@ img {
 }
 
 #visitors-title {
+  font-family: 'Papyrus', sans-serif;
+  font-size: 40px; /* Change the font size to your desired value */
   text-align: center;
   background-color:rgb(231, 213, 213);
-  padding: 10px 0;
   margin-bottom: 20px;
 }
 
@@ -123,14 +139,16 @@ img {
   text-align: center;
   margin-bottom: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; 
 }
 
 #search-input {
   width: 100%;
+  max-width: 1490px; 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin: 0 auto; 
 }
 
 #visitor-cards {
@@ -142,6 +160,7 @@ img {
   max-width: 800px;
   margin: 0 auto;
 }
+
 .visitor-card {
   width: calc(33.33% - 20px);
   background-color: #fff;
@@ -149,10 +168,11 @@ img {
   padding: 10px; /* ריחוף */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   transition: background-color 0.3s, color 0.3s; /* אנימציה על השינוי */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .visitor-card:hover {
@@ -170,10 +190,29 @@ img {
 }
 
 #zoo-title {
+  font-family: 'Papyrus', sans-serif;
+  font-size: 40px; /* Change the font size to your desired value */
   text-align: center; /* מרכז את הטקסט באופן אופקי */
   background-color:grey; /* צבע רקע לכותרת */
   padding: 10px 0; /* ריווח פנימי של 10 פיקסלים מלמעלה ומלמטה */
   margin-bottom: 20px; /* ריווח מתחת לכותרת */
+}
+
+#filter-Title{
+  font-family: 'Papyrus', sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+#filter-options {
+  background-color: white;
+  margin: 0 auto;
+  width: 50%;
+  border: 2px solid #ccc; /* Add border around the div */
+  padding: 20px; /* Add padding inside the div */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
 }
 
 #visitor-info {
@@ -189,12 +228,12 @@ img {
 .navList {
   list-style-type: none;
   align-items: center;
-  justify-content: baseline;
+  justify-content:end;
   display: flex;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #fff;
+
 }
 
 .navList a {
@@ -203,7 +242,7 @@ img {
   letter-spacing: 0.3rem;
   font-weight: 300;
   text-transform: uppercase;
-  color: black;
+  color: rgb(247, 234, 234);
   margin-left: 40px;
 }
 
@@ -236,23 +275,6 @@ img {
 #search-box {
   width: 100%;
   box-sizing: border-box;
-}
-
-#zoo-title {
-  background-color: grey;
-  text-align: center;
-}
-#filter-options {
-  background-color: white;
-  margin: 0 auto;
-  width: 50%;
-  border: 2px solid #ccc; /* Add border around the div */
-  padding: 20px; /* Add padding inside the div */
-  border-radius: 5px; /* Add border radius for rounded corners */
-}
-
-#filter-options h2 {
-  text-align: center;
 }
 
 #filter-options div {
@@ -306,12 +328,3 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-a {
-  color: white;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}

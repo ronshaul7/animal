@@ -1,5 +1,5 @@
 body {
-  background-image: url(./images/theZoo.jpg);
+  background-image: url(./images/leaf.avif);
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -7,6 +7,7 @@ body {
 }
 
 #selectedAnimal {
+  background-color: #ccc;
   justify-content: center;
   align-items: center;
   border: 5px solid #534a4a; /* Add border around each card */
@@ -66,17 +67,15 @@ img {
 }
 
 #feed-dialog {
-  display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  z-index: 9999; /* כדי להבטיח שה-dialog יהיה הקדמי ביותר */
+  top: 50%; /* המרחק מהחלק העליון של המסך */
+  left: 50%; /* המרחק מהצד השמאלי של המסך */
+  transform: translate(-50%, -50%); /* כדי להביא את ה-dialog למרכז המסך */
+  background-color: white; /* צבע רקע ל-dialog */
+  padding: 20px; /* ריווח מסביב לתוכן */
+  border-radius: 5px; /* פינות מעוגלות */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* הצללה */
 }
 
 #close-dialog {
@@ -101,13 +100,16 @@ img {
   padding: 20px; /* ריווח פנימי */
   border: 1px solid #ccc; /* מסגרת */
   border-radius: 5px; /* פינות מעוגלות של המסגרת */
-  margin-top: 300px; /* ריווח מלמעלה */
+  margin-top: 200px; /* ריווח מלמעלה */
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* יידרך את האלמנטים להיות באמצע */
 }
 
 #visitors-title {
@@ -293,5 +295,23 @@ img {
   margin-bottom: 20px; /* Add margin-bottom to separate from other content */
 }
 
+.dashboardInfo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
+a {
+  color: white;
+}
 
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}

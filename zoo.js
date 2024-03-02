@@ -1,13 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const selectElement = document.getElementById("visitor-select");
   let onlineVisitors = JSON.parse(localStorage.getItem("onlineVisitors")) || [];
+  let visitorInfo = document.getElementById("visitor-info");
 
-  // Check if a visitor is logged in
-  if (onlineVisitors.length > 0) {
-    let visitor = onlineVisitors[0]; // Assuming only one visitor is logged in
+  visitorInfo.innerHTML = `${onlineVisitors[0].name} - Coins: ${onlineVisitors[0].coins}`; // Update the nav menu
 
-    // Update the visitor's name and coins in the navigation menu
+  visitors.forEach((visitor) => {
+    const option = document.createElement("option");
+    option.textContent = visitor.name;
+    option.value = visitor.name;
+    selectElement.appendChild(option);
+  });
+  function updateVisitorInfo(selectedVisitor) {
+    onlineVisitors[0] = selectedVisitor; // Set as the current online visitor
+    console.log(selectedVisitor);
+    localStorage.setItem("onlineVisitors", JSON.stringify(onlineVisitors)); // Update local storage
     let visitorInfo = document.getElementById("visitor-info");
-    visitorInfo.innerHTML = `${visitor.name} - Coins: ${visitor.coins}`;
+    visitorInfo.innerHTML = `${onlineVisitors[0].name} - Coins: ${onlineVisitors[0].coins}`; // Correct property access
+  }
+  // Attach the event listener to the select element
+  selectElement.addEventListener("change", function () {
+    const selectedVisitorName = this.value;
+    const selectedVisitor = visitors.find(
+      (visitor) => visitor.name === selectedVisitorName
+    );
+    console.log(selectedVisitor);
+    if (selectedVisitor) {
+      updateVisitorInfo(selectedVisitor); // Update the nav menu without reloading the page
+    } else {
+      console.error("Selected visitor not found");
+    }
+  });
+
+  if (onlineVisitors.length > 0) {
+    const onlineVisitor = onlineVisitors[0];
+    selectElement.value = onlineVisitor.name; // Set the select element to show the online visitor's name
   }
   renderAvailableAnimals();
 
@@ -97,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ממשו את הלוגיקה שמרנדרת את החיות לתוך הדיב עם האיידי animal-cards
   // וודאו שאתם מציגים אך ורק את החיות שעומדות בפילטורים הנוכחיים
   // במידה ואין פילטרים מסומנים, הציגו את כל החיות
+
   function visitAnimal(animalName) {
     // ממשו את הלוגיקה של מעבר לעמוד חיה עבור החיה הספציפית שנבחרה
     // שמרו בלוקל סטורג' את החיה שנבחרה, כך שבעמוד החיה נוכל לשלוף אותה מהסטורג' ולהציגה בהתאם
@@ -111,9 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let visitor = onlineVisitors[0]; // Assuming only one visitor is logged in
     let visitors = JSON.parse(localStorage.getItem("visitors")) || [];
-    let visitorIndex = visitors.findIndex(
-      (v) => v.name === visitor.visitorName
-    );
+    let visitorIndex = visitors.findIndex((v) => v.name === visitor.name);
     if (visitorIndex !== -1) {
       // Initialize visitedAnimals property as an empty array if it doesn't exist
       if (!visitors[visitorIndex].visitedAnimals) {
@@ -123,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let selectedAnimal = animals.find((animal) => animal.name === animalName);
       visitors[visitorIndex].visitedAnimals.push(selectedAnimal);
-      visitor.visitedAnimals.push(selectedAnimal);
+      // visitor[visitorIndex].visitedAnimals.push(selectedAnimal);
       localStorage.setItem("visitors", JSON.stringify(visitors));
       // Update the visitor's data in localStorage
       localStorage.setItem("onlineVisitors", JSON.stringify(onlineVisitors));
@@ -247,12 +273,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const habitatElement = document.createElement("p");
       habitatElement.textContent = `Habitat: ${animal.habitat}`;
+    
+      // Create and add the image element
+      const imageElement = document.createElement("img");
+      imageElement.src = animal.Image; // Assuming 'Image' is the correct property name
+
       card.appendChild(nameElement);
       card.appendChild(predatorElement);
       card.appendChild(weightElement);
       card.appendChild(heightElement);
       card.appendChild(colorElement);
       card.appendChild(habitatElement);
+      card.appendChild(imageElement);
 
       // Append the card to the container
       animalListContainer.appendChild(card);
@@ -268,40 +300,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderAvailableAnimals();
   }
   // Get the select element
-  const selectElement = document.getElementById("visitor-select");
-
-  // Populate the select element with visitor names
-  visitors.forEach((visitor) => {
-    const option = document.createElement("option");
-    option.textContent = visitor.name;
-    option.value = visitor.name;
-    selectElement.appendChild(option);
-  });
-
-  // Event listener for changes in the select element
-  selectElement.addEventListener("change", function () {
-    // Get the selected visitor's name
-    const selectedVisitorName = this.value;
-
-    // Find the visitor object in the visitors array
-    const selectedVisitor = visitors.find(
-      (visitor) => visitor.name === selectedVisitorName
-    );
-
-    if (selectedVisitor) {
-      onlineVisitors = [selectedVisitor];
-
-      // Update the online visitor in local storage
-      localStorage.setItem("onlineVisitors", JSON.stringify(onlineVisitors));
-
-      window.location.reload();
-    }
-  });
-
-  // Set the default selected option to the onlineVisitor's name
-  if (onlineVisitors.length > 0) {
-    selectElement.value = onlineVisitors[0].name;
-  }
 
   const resetButton = document.getElementById("reset-button");
   if (resetButton) {

@@ -193,9 +193,10 @@ img {
   font-family: 'Papyrus', sans-serif;
   font-size: 40px; /* Change the font size to your desired value */
   text-align: center; /* מרכז את הטקסט באופן אופקי */
-  background-color:grey; /* צבע רקע לכותרת */
+  background-color:rgb(177, 149, 149); /* צבע רקע לכותרת */
   padding: 10px 0; /* ריווח פנימי של 10 פיקסלים מלמעלה ומלמטה */
   margin-bottom: 20px; /* ריווח מתחת לכותרת */
+  
 }
 
 #filter-Title{
@@ -213,16 +214,6 @@ img {
   border-radius: 5px; /* Add border radius for rounded corners */
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
-}
-
-#visitor-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* ליישור האלמנטים לאורך */
-  justify-content: space-between; /* למרחק בין האלמנטים */
-  background-color: lightgray; /* רקע אפור */
-  padding: 10px; /* מרווח מסביב */
-  gap: 10px; /* מרווח בין האלמנטים */
 }
 
 .navList {
@@ -248,23 +239,6 @@ img {
 
 .navList a:hover {
   text-shadow: 3px 3px 20px, -2px 1px 30px;
-}
-
-
-/* CSS for visitor-info container */
-#visitor-info {
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
-}
-
-/* CSS for reset-button */
-#reset-button {
-  margin-left: 1rem; /* Add some space between the name and the button */
-}
-
-/* CSS for visitor-select */
-#visitor-select {
-  margin-top: 1rem; /* Add some space between the button and the select */
 }
 
 /* CSS for feed-dialog */
@@ -326,5 +300,19 @@ img {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-nav {
+  display: flex;
+  align-items: center;
+  background-color: #ccc;
+  justify-content: space-around;
+  font-family: 'Monaco', monospace; 
+}
+
+.info-nav div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 

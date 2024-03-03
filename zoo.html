@@ -14,12 +14,16 @@
         <li><a href="./dashboard.html">Dashboard</a></li>
       </ul>
     </nav>
-    <nav id="visitor-info"></nav>
-    <button id="reset-button">Reset</button>
-    <select id="visitor-select">
-      <!-- Options will be added dynamically using JavaScript -->
-    </select>
-
+    <div class="info-nav">
+      <nav id="visitor-info"></nav>
+      <div>
+        <p> replace visitor from the list</p>
+        <select id="visitor-select">
+          <!-- Options will be added dynamically using JavaScript -->
+        </select>
+      </div>
+      <button id="reset-button">Reset</button>
+    </div>    
     <h1 id="zoo-title">Welcome To The Zoo</h1>
     <div>
       <input type="text" id="searchInput" placeholder="Search by name..." />

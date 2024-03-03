@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("onlineVisitors", JSON.stringify(onlineVisitors)); // Update local storage
     let visitorInfo = document.getElementById("visitor-info");
     visitorInfo.innerHTML = `${onlineVisitors[0].name} - Coins: ${onlineVisitors[0].coins}`; // Correct property access
-    window.location.reload();
+    window.location.href = "zoo.html";
   }
   // Attach the event listener to the select element
   selectElement.addEventListener("change", function () {
@@ -28,7 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     console.log(selectedVisitor);
     if (selectedVisitor) {
-      updateVisitorInfo(selectedVisitor); // Update the nav menu without reloading the page
+      updateVisitorInfo(selectedVisitor);
+      const searchInput = document.getElementById("searchInput");
+      searchInput.value = ""; // Clear search input
+      localStorage.removeItem("filters"); // Remove filters from local storage if any
+
+      // Rerender all animals as the visitor has changed
+      renderAvailableAnimals();
+      // Update the nav menu without reloading the page
     } else {
       console.error("Selected visitor not found");
     }
@@ -93,12 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Visitor's coins remaining: " + visitor.coins);
       renderAnimal();
       renderRelatedAnimals();
+      visitorInfo.innerHTML = `${onlineVisitors[0].name} - Coins: ${onlineVisitors[0].coins}`; // Update the nav menu
       const dialog = document.getElementById("feed-dialog");
       dialog.style.display = "block";
       const closeButton = document.getElementById("close-dialog");
       closeButton.addEventListener("click", () => {
         dialog.style.display = "none";
-        window.location.reload();
       });
     } else {
       if (selectedAnimal.isPredator) {

@@ -291,17 +291,6 @@ img {
   margin-bottom: 20px; /* Add margin-bottom to separate from other content */
 }
 
-.dashboardInfo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
 .info-nav {
   display: flex;
   align-items: center;
@@ -314,5 +303,18 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.dashboardInfo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* להקטין במקרה שבו האלמנט מכסה תוכן נוסף */
+  width: 80%;
+  max-width: 800px; /* גודל מרבי */
 }
 

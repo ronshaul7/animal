@@ -1,10 +1,66 @@
 // מערכים גלובלים שישמשו אותנו בכל העמודים
 
-// Check if each visitor object has the inUse property; if not, initialize it to false
-
-// Save the updated visitors array back to local storage
 let onlineVisitors = JSON.parse(localStorage.getItem("onlineVisitors")) || [];
-console.log(onlineVisitors);
+//מציגה אורחים בדרופ דאון
+function populateVisitorOptions(selectElement, visitors) {
+  visitors.forEach((visitor) => {
+    const option = document.createElement("option");
+    option.textContent = visitor.name;
+    option.value = visitor.name;
+    selectElement.appendChild(option);
+  });
+}
+//updates the require data with event listener
+function handleVisitorSelection(
+  selectElement,
+  visitors,
+  updateVisitorInfoCallback,
+  loadExistingFiltersCallback
+) {
+  selectElement.addEventListener("change", function () {
+    const selectedVisitorName = this.value;
+    const selectedVisitor = visitors.find(
+      (visitor) => visitor.name === selectedVisitorName
+    );
+
+    if (selectedVisitor) {
+      updateVisitorInfoCallback(selectedVisitor);
+
+      if (clearSearchAndFiltersCallback) {
+        clearSearchAndFiltersCallback();
+      }
+
+      if (loadExistingFiltersCallback) {
+        loadExistingFiltersCallback();
+      }
+
+      // Make sure this function is accessible in this context
+    } else {
+      console.error("Selected visitor not found");
+    }
+  });
+}
+//handle the selection
+function selectOnlineVisitor(selectElement, onlineVisitors) {
+  if (onlineVisitors.length > 0) {
+    const onlineVisitor = onlineVisitors[0]; // Assuming the first visitor is the currently online one
+    selectElement.value = onlineVisitor.name; // Set the dropdown to show the online visitor's name
+  }
+}
+// resets the data in the local storage
+function setupResetButton(buttonId, redirectUrl) {
+  const resetButton = document.getElementById(buttonId);
+  if (resetButton) {
+    resetButton.addEventListener("click", function (event) {
+      // Prevent any default action or event propagation that might interfere
+      event.preventDefault();
+      event.stopPropagation();
+      localStorage.clear(); // Clears all local storage data
+      window.location.href = redirectUrl; // Redirects to the specified URL
+    });
+  }
+}
+//מערך של תמונות
 const stockImages = [
   "images/avatar.png",
   "images/male5.webp",
@@ -19,10 +75,7 @@ const stockImages = [
   "images/beautiful-woman5.jpg",
   "images/male8.jpg",
   "images/woman1.jpg",
-
-  // Add paths for all your stock images
 ];
-
 let visitors = [
   {
     name: "John Smith",
@@ -114,7 +167,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image:"images/lion.jpg"
+    Image: "images/lion.jpg",
   },
   {
     name: "Elephant",
@@ -123,7 +176,7 @@ let animals = [
     height: 200,
     color: "grey",
     habitat: "land",
-    Image:"images/elephant.avif"
+    Image: "images/elephant.avif",
   },
   {
     name: "Giraffe",
@@ -132,7 +185,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image:"images/giraffe.png"
+    Image: "images/giraffe.png",
   },
   {
     name: "Tiger",
@@ -141,7 +194,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image:"images/tiger.webp"
+    Image: "images/tiger.webp",
   },
   {
     name: "Monkey",
@@ -150,7 +203,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image:"images/monkey.jpg"
+    Image: "images/monkey.jpg",
   },
   {
     name: "Kangaroo",
@@ -159,7 +212,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image:"images/kangaroo.avif"
+    Image: "images/kangaroo.avif",
   },
   {
     name: "Penguin",
@@ -168,7 +221,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "sea",
-    Image:"images/penguin.jpg"
+    Image: "images/penguin.jpg",
   },
   {
     name: "Zebra",
@@ -177,7 +230,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image:"images/zebra.webp"
+    Image: "images/zebra.webp",
   },
   {
     name: "Cheetah",
@@ -186,7 +239,7 @@ let animals = [
     height: 120,
     color: "brown",
     habitat: "land",
-    Image: "images/cheetah.jpg"
+    Image: "images/cheetah.jpg",
   },
 ];
 
@@ -227,7 +280,6 @@ function logout() {
       onlineVisitors.pop(); // Remove existing visitor
       localStorage.setItem("onlineVisitors", JSON.stringify(onlineVisitors));
       console.log("Logged out successfully.");
-      console.log(onlineVisitors);
     } else {
       console.log("Logout canceled.");
     }

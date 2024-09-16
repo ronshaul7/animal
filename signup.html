@@ -8,15 +8,30 @@
     <script src="./main.js"></script>
     <link rel="stylesheet" href="project.css" />
   </head>
+
   <body>
     <form id="create-visitor-form">
-      <div> 
-        <h1> Welcome To The Zoo </h1>
-        <p>Please enter your full name and click "Submit"</p>
-        <label for="Fullname">Full name:</label>
-        <input type="text" id="Fullname" name="Fullname"></br>
-        <br></br>
-        <input type="submit"></input>
+      <div>
+        <h1>Welcome To The Zoo</h1>
+        <p>
+          Please enter your full name and click "Submit" or choose an existing
+          visitor
+        </p>
+        <label for="full-name">Full name:</label>
+
+        <div class="input-group">
+          <input type="text" id="full-name" name="full-name" />
+          <input type="submit" value="Submit"></input>
+                </div>
+        <div class="button-container">
+          <button
+            type="button"
+            onclick="window.location.href='login.html';"
+            class="login-button"
+          >
+            Existing visitor
+          </button>
+        </div>
       </div>
     </form>
     <!-- צרו טופס יצירת אורח חדש -->

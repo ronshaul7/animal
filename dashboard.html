@@ -11,21 +11,19 @@
   </head>
   <body>
     <nav class="menu">
-      <ul class="navList">
+      <ul class="nav-list">
         <li><a href="./login.html">Visitors</a></li>
         <li><a href="./zoo.html">Zoo</a></li>
       </ul>
     </nav>
-    <div class="info-nav">
-      <nav id="visitor-info"></nav>
-      <div>
-        <p> replace visitor from the list</p>
-        <select id="visitor-select">
-          <!-- Options will be added dynamically using JavaScript -->
-        </select>
-      </div>
-      <button id="reset-button">Reset</button>
-    </div>
+    <nav id="visitor-info"></nav>
+    <button id="reset-button">Reset</button>
+    <label id="label-visitor-select" for="visitor-select"
+      >Change Visitor:</label
+    >
+    <select id="visitor-select">
+      <!-- Options will be added dynamically using JavaScript -->
+    </select>
     <div class="dashboardInfo">
       <div id="visited-animals-chart-container" class="chart-container">
         <h2>Visited Animals Statistics</h2>
